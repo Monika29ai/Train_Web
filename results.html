@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Train Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Available Direct Trains</h1>
+
+    <h3>{{ source }} ➜ {{ destination }}</h3>
+
+    {% if results %}
+
+    <table>
+
+        <tr>
+            <th>Train Number</th>
+            <th>Departure Time</th>
+            <th>Arrival Time</th>
+            <th>Total Journey Duration</th>
+        </tr>
+
+        {% for train in results %}
+
+        <tr>
+            <td>{{ train.train_no }}</td>
+            <td>{{ train.departure }}</td>
+            <td>{{ train.arrival }}</td>
+            <td>{{ train.duration }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    {% else %}
+
+    <h3>No Direct Trains Found</h3>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/">⬅ Back</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Train Enquiry System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🚆 Train Enquiry System</h1>
+
+    <form action="/search" method="POST">
+
+        <label>Enter Source Station</label>
+        <input type="text" name="source" placeholder="Type source station" required>
+
+        <label>Enter Destination Station</label>
+        <input type="text" name="destination" placeholder="Type destination station" required>
+
+        <button type="submit">Search Train</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
